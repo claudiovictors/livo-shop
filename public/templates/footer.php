@@ -56,7 +56,7 @@
       </small>
     </div>
   </dialog>
-  <script src="<?= rtrim('/', '/') . '/' . 'public/assets/js/ui.js'; ?>"></script>
-  <script src="<?= rtrim('/', '/') . '/' . 'public/assets/js/script.js'; ?>"></script>
+  <script src="/public/assets/js/ui.js"></script>
+  <script src="/public/assets/js/script.js"></script>
 </body>
 </html>

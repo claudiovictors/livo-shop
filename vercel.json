@@ -1,5 +1,6 @@
 
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
     "api/*.php": {
       "runtime": "vercel-php@0.9.0"
@@ -8,11 +9,11 @@
   "routes": [
     {
       "src": "^/public/assets/(.*)$",
-      "dest": "/api/assets.php?file=$1"
+      "dest": "/api/assets?file=$1"
     },
     {
       "src": "^/(.*)$",
-      "dest": "/api/index.php"
+      "dest": "/api/index"
     }
   ]
 }

@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="<?= rtrim('/', '/') . '/' . 'public/assets/css/style.css'; ?>">
-    <link rel="shortcut icon" href="<?= rtrim('/', '/') . '/' . 'public/assets/img/favicon.svg'; ?>" type="image/svg+xml">
+    <link rel="stylesheet" href="/public/assets/css/style.css">
+    <link rel="shortcut icon" href="/public/assets/img/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
