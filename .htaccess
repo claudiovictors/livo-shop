@@ -1,0 +1,18 @@
+Options -Indexes
+DirectoryIndex index.php
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Pass the Authorization header through (needed on many shared hosts)
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Never serve source, dependencies or project metadata
+    RewriteRule ^(vendor|src|tests)(/|$) - [F,L]
+    RewriteRule ^(composer\.(json|lock)|README\.md|\.gitignore|\.htaccess)$ - [F,L]
+
+    # Real files (e.g. /public/app.css) are served directly; everything else goes to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>

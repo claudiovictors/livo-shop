@@ -1,0 +1,70 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "787730d51a590f341044a9e7a0e74492",
+    "packages": [
+        {
+            "name": "tigger/tigger",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/claudiolinux/tigger.git",
+                "reference": "9037d911a54758dccb621047f53be1e8d6a664a4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/claudiolinux/tigger/zipball/9037d911a54758dccb621047f53be1e8d6a664a4",
+                "reference": "9037d911a54758dccb621047f53be1e8d6a664a4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.3"
+            },
+            "suggest": {
+                "ext-curl": "Required to send outbound webhooks (Tigger\\Webhooks\\Dispatcher)."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Tigger\\": "src/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "php tests/smoke.php",
+                    "php tests/features.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A tiny, Express.js-inspired micro-framework for PHP 8.3+ with zero dependencies.",
+            "keywords": [
+                "express",
+                "framework",
+                "micro-framework",
+                "middleware",
+                "router"
+            ],
+            "support": {
+                "issues": "https://github.com/claudiolinux/tigger/issues",
+                "source": "https://github.com/claudiolinux/tigger"
+            },
+            "time": "2026-10-17T19:37:13+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {},
+    "prefer-stable": true,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=8.3"
+    },
+    "platform-dev": {},
+    "plugin-api-version": "2.9.0"
+}

@@ -1,0 +1,29 @@
+{
+    "name": "claudio-victor/buashop",
+    "description": "Simples e-commerce com JS e PHP",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cláudio Victor",
+            "email": "barrosclaudio147@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "tigger/tigger": ">=1.0"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/claudiolinux/tigger"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
