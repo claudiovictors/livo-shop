@@ -1,7 +1,4 @@
-
 <?php
-
-declare(strict_types=1);
 
 $base = realpath(__DIR__ . '/../public/assets');
 
