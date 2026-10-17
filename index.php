@@ -25,6 +25,14 @@ if (!$webhookSecret) {
     );
 }
 
+error_log(
+    '[BMC DEBUG] Segredo configurado: ' .
+    (getenv('BMC_WEBHOOK_SECRET') !== false
+        && getenv('BMC_WEBHOOK_SECRET') !== ''
+        ? 'SIM'
+        : 'NÃO')
+);
+
 $eventStorePath = sys_get_temp_dir() . '/livo-bmc-webhooks';
 
 if (!is_dir($eventStorePath)) {
