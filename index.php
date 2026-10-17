@@ -53,30 +53,46 @@ $app->get('/about', function(Request $req, Response $res) {
     return $res->render('about');
 });
 
-$app->post('/webhooks/buymeacoffee', Webhook::receive(
-    Webhook::buyMeACoffee($webhookSecret),
-    function (WebhookEvent $event): void {
-        error_log('[BMC] Evento recebido: ' . $event->type);
 
-        if ($event->type === 'extra_purchase.created') {
+$app->post(
+    '/webhooks/buymeacoffee',
+    Webhook::receive(
+        Webhook::buyMeACoffee($webhookSecret),
+        function (WebhookEvent $event): void {
+            // Não guardar o payload, os dados pessoais ou as vendas.
+            $type = $event->type;
+
+            error_log('[LIVO BMC] Evento: ' . $type);
+
+            if ($type === 'extra_purchase.created') {
+                error_log(
+                    '[LIVO BMC] Compra Extra recebida. ' .
+                    'É necessário confirmar a correspondência ' .
+                    'com uma encomenda da LIVO.'
+                );
+                return;
+            }
+
+            if ($type === 'extra_purchase.updated') {
+                error_log(
+                    '[LIVO BMC] Compra Extra atualizada.'
+                );
+                return;
+            }
+
+            if ($type === 'extra_purchase.refunded') {
+                error_log(
+                    '[LIVO BMC] Reembolso recebido.'
+                );
+                return;
+            }
+
             error_log(
-                '[LIVO] Compra recebida para análise.'
+                '[LIVO BMC] Evento não tratado.'
             );
         }
+    )
+);
 
-        if ($event->type === 'extra_purchase.updated') {
-            error_log(
-                '[LIVO] Atualização de compra recebida.'
-            );
-        }
-
-        if ($event->type === 'extra_purchase.refunded') {
-            error_log(
-                '[LIVO] Evento de reembolso recebido.'
-            );
-        }
-    },
-    new FileEventStore($eventStorePath),
-));
 
 $app->run();
