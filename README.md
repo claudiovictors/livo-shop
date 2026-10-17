@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="public/assets/img/favicon.svg" alt="Balle Shop logo" width="96" height="96">
+  <img src="public/assets/img/favicon.svg" alt="Livo Shop logo" width="96" height="96">
 </p>
 
-<h1 align="center">Balle Shop</h1>
+<h1 align="center">Livo Shop</h1>
 
 <p align="center">
   A fictional t-shirt store for developers.<br>
@@ -27,7 +27,7 @@
 
 ## About
 
-Balle Shop is a small storefront built to test one question: how simple can it be to put an online payment to work?
+Livo Shop is a small storefront built to test one question: how simple can it be to put an online payment to work?
 
 The store has a hero section, a product grid, a slide-in cart, search, and static pages for About and Contact. Checkout is handled by [Buy Me a Coffee](https://buymeacoffee.com/claudio.dev).
 
